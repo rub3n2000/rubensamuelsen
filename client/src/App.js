@@ -19,7 +19,10 @@ function App() {
     if(path == "/") {
       content = <LandingPage SetPath={SetPath}/>;
     }
-    else if(path == "/customers")
+  }, [])
+
+  useEffect(() => {
+    if(path == "/customers")
     {
       content = <Customers SetPath={SetPath}/>;
     }

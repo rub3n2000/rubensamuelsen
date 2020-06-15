@@ -14,7 +14,7 @@ const Customers = ( props ) => {
         }).catch((e) => {
             console.log(e);
         });
-    });
+    }, []);
     let customersDiv;
     if(customers !== undefined) {
     customersDiv = customers.map((customer) => {
