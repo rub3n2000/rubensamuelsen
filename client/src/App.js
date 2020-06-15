@@ -15,11 +15,9 @@ function App() {
 
   let content = <></>;
 
-  useEffect(() => {
-    if(path == "/") {
-      content = <LandingPage SetPath={SetPath}/>;
-    }
-  }, [])
+  if(path == "/") {
+    content = <LandingPage SetPath={SetPath}/>;
+  }
 
   useEffect(() => {
     if(path == "/customers")
