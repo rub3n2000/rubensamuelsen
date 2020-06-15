@@ -24,7 +24,7 @@ const Nav = ( props ) => {
     <DrawerToggle clicked={openDrawerHandler}/>
     <SideDrawer open={showSideDrawer} closed={sideDrawerClosedHandler}/>
     <nav className={styles.DesktopOnly}>
-    <NavigationItems/>
+    <NavigationItems SetPath={props.SetPath}/>
     </nav>
     </header>
     </>

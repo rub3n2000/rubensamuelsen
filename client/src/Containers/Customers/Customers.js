@@ -27,7 +27,7 @@ const Customers = ( props ) => {
 
     return(
         <>
-        <Nav/>
+        <Nav SetPath={props.SetPath}/>
         <div className={styles.Content}>
             {customersDiv}
         </div>

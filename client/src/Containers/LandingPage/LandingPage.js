@@ -6,7 +6,7 @@ import Nav from '../Nav/Nav';
 const LandingPage = ( props ) => {
     return(
         <>
-        <Nav/>
+        <Nav SetPath={props.SetPath}/>
         <div className={styles.Content}>
             <h4>Welcome!</h4>
         </div>
