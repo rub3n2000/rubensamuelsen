@@ -18,13 +18,10 @@ function App() {
   if(path == "/") {
     content = <LandingPage SetPath={SetPath}/>;
   }
-
-  useEffect(() => {
-    if(path == "/customers")
-    {
-      content = <Customers SetPath={SetPath}/>;
-    }
-  }, [path]);
+  else if(path == "/customers")
+  {
+    content = <Customers SetPath={SetPath}/>;
+  }
 
 return (
   <div className={styles.App}>
