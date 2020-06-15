@@ -8,8 +8,8 @@ const navigationItems = ( props ) => {
     
     return (
         <div className={styles.NavigationItems}>
-        <NavigationItem link="/"> Home </NavigationItem>
-        <NavigationItem link="/customers"> Customers </NavigationItem>
+        <NavigationItem SetPath={props.SetPath} link="/"> Home </NavigationItem>
+        <NavigationItem SetPath={props.SetPath} link="/customers"> Customers </NavigationItem>
         <div className={styles.LanguageButtons}>
         </div>
         </div>
