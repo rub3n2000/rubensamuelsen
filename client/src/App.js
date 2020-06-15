@@ -10,9 +10,7 @@ function App() {
     <div className={styles.App}>
       <BrowserRouter>
         <Switch>
-          <Route path="/customers">
-            <Customers/>
-          </Route>
+          <Route path="/customers" component={Customers}/>
           <Route path="/">
             <LandingPage/>
           </Route>
