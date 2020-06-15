@@ -6,7 +6,12 @@ import LandingPage from './Containers/LandingPage/LandingPage';
 import Customers from './Containers/Customers/Customers';
 
 function App() {
+  
   const[path, setPath] = useState("/");
+  
+  const SetPath = (text) =>{
+    setPath(text);
+  }
 
   let content = <></>;
 
@@ -16,10 +21,6 @@ function App() {
   else if(path == "/customers")
   {
     content = <Customers SetPath={SetPath}/>;
-  }
-
-  const SetPath = (text) =>{
-    setPath(text);
   }
 
   return (
