@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import styles from './App.module.scss';
@@ -15,19 +15,22 @@ function App() {
 
   let content = <></>;
 
-  if(path == "/") {
-    content = <LandingPage SetPath={SetPath}/>;
-  }
-  else if(path == "/customers")
-  {
-    content = <Customers SetPath={SetPath}/>;
-  }
+  useEffect(() => {
+    if(path == "/") {
+      content = <LandingPage SetPath={SetPath}/>;
+    }
+    else if(path == "/customers")
+    {
+      content = <Customers SetPath={SetPath}/>;
+    }
+  }, [path]);
 
-  return (
-    <div className={styles.App}>
-      {content}
-    </div>
-  );
+return (
+  <div className={styles.App}>
+    {content}
+  </div>
+);
+
 }
 
 export default App;
