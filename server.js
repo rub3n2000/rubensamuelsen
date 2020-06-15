@@ -6,8 +6,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.get('*', (req, res) => {
-    res.send("hey");
-    //res.sendFile('/index.html');
+    res.sendFile('/index.html');
 });
 
 app.get('/api/customers', (req,res) => {
