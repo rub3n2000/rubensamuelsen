@@ -17,7 +17,6 @@ const Customers = ( props ) => {
     });
     let customersDiv;
     if(customers !== undefined) {
-    console.log(customers);
     customersDiv = customers.map((customer) => {
         return(<div key={customer.id} className={styles.Customer}>{customer.firstName + " " + customer.lastName}</div>);
     });
