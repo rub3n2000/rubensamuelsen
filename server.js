@@ -5,16 +5,17 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '/client/build')));
 
+app.get('*', (req, res) => {
+    res.send("hey");
+    //res.sendFile('/index.html');
+});
+
 app.get('/api/customers', (req,res) => {
     const customers = [
         {id: 1, firstName: 'Beth', lastName: 'Doe'},
         {id: 2, firstName: 'John', lastName: 'Doe'}
     ];
     res.json(customers);
-});
-
-app.get('*', (req, res) => {
-    res.sendFile('/index.html');
 });
 
 const port = process.env.PORT || 5000;
