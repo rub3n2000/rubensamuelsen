@@ -1,0 +1,19 @@
+{
+  "name": "expressreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start" : "node server.js",
+    "startDev" : "cd client && npm run build && cd .. && node server.js",
+    "server": "cd client && npm run build && cd .. && nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

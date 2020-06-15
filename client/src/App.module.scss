@@ -1,0 +1,19 @@
+@import './Sass/GlobalFunctions.module.scss';
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.App {
+  min-height: 500px;
+  height: 100%;
+  background-color: f_color(primary);
+}

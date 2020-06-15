@@ -1,0 +1,11 @@
+@import '../../Sass/GlobalFunctions.module.scss';
+
+.Content {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: f_color(primary);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
