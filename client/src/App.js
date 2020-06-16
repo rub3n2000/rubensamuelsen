@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import styles from './App.module.scss';
@@ -6,29 +6,20 @@ import LandingPage from './Containers/LandingPage/LandingPage';
 import Customers from './Containers/Customers/Customers';
 
 function App() {
-  
-  const[path, setPath] = useState("/");
-  
-  const SetPath = (text) =>{
-    setPath(text);
-  }
-
-  let content = <></>;
-
-  if(path == "/") {
-    content = <LandingPage SetPath={SetPath}/>;
-  }
-  else if(path == "/customers")
-  {
-    content = <Customers SetPath={SetPath}/>;
-  }
-
-return (
-  <div className={styles.App}>
-    {content}
-  </div>
-);
-
+  return (
+    <div className={styles.App}>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/customers">
+            <Customers/>
+          </Route>
+          <Route path="/">
+            <LandingPage/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
