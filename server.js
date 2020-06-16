@@ -13,8 +13,7 @@ app.get('/api/customers', (req,res) => {
     res.json(customers);
 });
 
-app.get(/./, (req, res) => {
-    res.send("hey");
+app.get("*", (req, res) => {
     res.sendFile('index.html');
 });
 
