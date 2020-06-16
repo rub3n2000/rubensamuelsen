@@ -4,14 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start" : "node server.js",
-    "startDev" : "cd client && npm run build && cd .. && node server.js",
+    "start": "node server.js",
+    "startDev": "cd client && npm run build && cd .. && node server.js",
     "server": "cd client && npm run build && cd .. && nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-sslify": "^1.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
