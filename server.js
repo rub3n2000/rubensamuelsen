@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '/client/build')));
+app.use(express.static(path.join(__dirname, '/client/build/')));
 
 app.get('/api/customers', (req,res) => {
     const customers = [
@@ -13,13 +13,9 @@ app.get('/api/customers', (req,res) => {
     res.json(customers);
 });
 
-app.get('*', (req, res) => {
-    res.sendFile('/index.html');
-});
-
 app.get(/./, (req, res) => {
     res.send("hey");
-    res.sendFile('/index.html');
+    res.sendFile('index.html');
 });
 
 const port = process.env.PORT || 5000;
