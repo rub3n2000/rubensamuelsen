@@ -14,7 +14,7 @@ app.get('/api/customers', (req,res) => {
 });
 
 app.get("*", (req, res) => {
-    res.sendFile('./index.html');
+    res.sendFile('./index.html', {root: path.join(__dirname, '/client/build')});
 });
 
 const port = process.env.PORT || 5000;
