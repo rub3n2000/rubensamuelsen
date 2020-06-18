@@ -1,15 +1,24 @@
 import React from 'react';
-import styles from './LandingPage.module.scss';
-
-import Nav from '../Nav/Nav';
+import './LandingPage.scss';
 
 const LandingPage = ( props ) => {
     return(
         <>
-        <Nav SetPath={props.SetPath}/>
-        <div className={styles.Content}>
-            <h4>Welcome!</h4>
-        </div>
+        <section id="LandingPage">
+            <div className="Canvas">
+                <canvas id="Canvas" width="2560" height="938"></canvas>
+            </div>
+            <div className="LandingPageContent">
+                <p>
+                    Hello I'm <span>Ruben Samuelsen</span>. 
+                    <br/> 
+                    I'm a full-stack web developer
+                </p>
+                <div id="ViewMyWork">
+                    <a href="#About">View my work</a>
+                </div>
+            </div>
+        </section>
         </>
     )
 }

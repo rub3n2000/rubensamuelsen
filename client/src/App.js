@@ -3,21 +3,13 @@ import logo from './logo.svg';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import styles from './App.module.scss';
 import LandingPage from './Containers/LandingPage/LandingPage';
-import Customers from './Containers/Customers/Customers';
+import About from './Containers/About/About';
 
 function App() {
   return (
     <div className={styles.App}>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/customers">
-            <Customers/>
-          </Route>
-          <Route path="/">
-            <LandingPage/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+        <LandingPage/>
+        <About/>
     </div>
   );
 }

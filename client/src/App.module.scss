@@ -1,18 +1,14 @@
 @import './Sass/GlobalFunctions.module.scss';
 
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-}
-
-#root {
-  height: 100%;
-}
-
 .App {
   min-height: 100%;
-  background-color: f_color(primary);
+  overflow-x: hidden;
+}
+
+section {
+  background-color: #252934;;
+}
+
+section:nth-of-type(even) {
+  background-color: white;
 }

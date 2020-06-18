@@ -10,8 +10,12 @@
     align-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: f_color(secondary);
+    background-color: #1d2029;
     padding-left: 5%;
+    -moz-box-shadow: 5px 15px 5px 0px rgb(219, 219, 219);
+    -webkit-box-shadow: 5px 15px 5px 0px rgb(219, 219, 219);
+    box-shadow: 5px 15px 5px 0px rgb(219, 219, 219);
+    border: 2px;
 }
 
 .DesktopOnly {

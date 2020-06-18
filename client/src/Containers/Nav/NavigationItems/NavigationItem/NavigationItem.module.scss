@@ -42,24 +42,24 @@
         min-width: 120px;
         margin: 2%;
         max-width: 160px;
-    }
     
-    a {
-        width: 100%;
-        background-color: f_color(third);
-        height: max-content;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: f_color(fourth);
-        padding: 10%;
-        overflow: hidden;
-        white-space: nowrap;
-        text-align: center;
-    }
     
-    img {
-        object-fit: contain;
+        a {
+            width: 100%;
+            background-color: f_color(third);
+            height: max-content;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: f_color(fourth);
+            padding: 10%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+        }
+        
+        img {
+            object-fit: contain;
+        }
     }
-
 }

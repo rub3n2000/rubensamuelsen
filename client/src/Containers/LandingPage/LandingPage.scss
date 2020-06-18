@@ -1,0 +1,150 @@
+@import '../../Sass/GlobalFunctions.module.scss';
+@import '../../Sass/GlobalMixins.module.scss';
+
+#LandingPage {
+    color: #fff;
+    padding: 0 10px;
+    align-items: center;
+    display: flex;
+    line-height: 18pt;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.Canvas {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    background: #252934;
+    line-height: 18pt;
+    color: #fff;
+}
+
+.LandingPageContent {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    line-height: 18pt;
+    pointer-events: all;
+    text-align: center;
+    z-index: 1;
+
+    #ViewMyWork {
+        width:66%;
+        margin-top: 5%;
+        a {
+            background-color: transparent;
+            border: 2px solid rgb(165, 237, 255);
+            font-size: 1.5em;
+            width: 100%;
+            height: max-content;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: f_color(fourth);
+            padding: 10%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: center;
+        }
+        transition: 0.5s;
+        a:hover {
+            color: yellow;
+        }
+    }
+
+    #ViewMyWork:hover {
+        transform: scale(1.1,1.1);
+    }
+    
+
+    p {
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+    span {
+        color: rgb(247, 0, 255);
+    }
+}
+
+@include mobile {
+    #LandingPage {
+        color: #fff;
+        padding: 0 10px;
+        align-items: center;
+        display: flex;
+        line-height: 18pt;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    .Canvas {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        background: #252934;
+        line-height: 18pt;
+        color: #fff;
+    }
+    
+    .LandingPageContent {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fff;
+        line-height: 18pt;
+        pointer-events: all;
+        text-align: center;
+        z-index: 1;
+    
+        #ViewMyWork {
+            width:66%;
+            margin-top: 5%;
+            a {
+                background-color: transparent;
+                border: 2px solid rgb(165, 237, 255);
+                font-size: 1.5em;
+                width: 100%;
+                height: max-content;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: f_color(fourth);
+                padding: 10%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-align: center;
+            }
+            transition: 0.5s;
+            a:hover {
+                color: yellow;
+            }
+        }
+    
+        #ViewMyWork:hover {
+            transform: scale(1.1,1.1);
+        }
+        
+    
+        p {
+            font-size: 1.5em;
+            line-height: 1em;
+        }
+    
+        span {
+            color: rgb(247, 0, 255);
+        }
+    }
+}
