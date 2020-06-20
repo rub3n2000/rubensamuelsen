@@ -2,32 +2,17 @@
 
 .NavigationItems {
     display: flex;
-    flex-grow: 100;
-    min-width: auto;
-    justify-content: flex-end;
-    margin-right: 5%;
+    width: 100%;
     flex-direction: column;
     min-height: 100%;
-    
 }
 
 .NavigationButtons {
     display: flex;
-    flex-grow: 100;
     min-width: auto;
     justify-content: flex-start;
     flex-direction: column;
 }
-
-.LanguageButtons {
-    display: flex;
-    flex-grow: 25;
-    min-width: auto;
-    justify-content: center;
-    flex-direction: row;
-    margin-bottom: 50%;
-}
-
 
 @include desktop
 {
@@ -43,7 +28,6 @@
     
     .LanguageButtons {
         flex-direction: row;
-        flex-grow: 100;
         justify-content: flex-end;
         margin-bottom: 0;
     }

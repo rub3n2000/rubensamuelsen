@@ -1,13 +1,11 @@
 import React from 'react';
 import './LandingPage.scss';
+import FollowMe from '../FollowMe/FollowMe';
 
 const LandingPage = ( props ) => {
     return(
-        <>
         <section id="LandingPage">
-            <div className="Canvas">
-                <canvas id="Canvas" width="2560" height="938"></canvas>
-            </div>
+            <FollowMe/>
             <div className="LandingPageContent">
                 <p>
                     Hello I'm <span>Ruben Samuelsen</span>. 
@@ -19,7 +17,6 @@ const LandingPage = ( props ) => {
                 </div>
             </div>
         </section>
-        </>
     )
 }
 

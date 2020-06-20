@@ -1,0 +1,109 @@
+.FollowMe {
+    z-index: 100;
+    width: 55px;
+    display: flex;
+    justify-content: flex-start;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        text-align: center;
+        font-size: 1em;
+        visibility: visible;
+        line-height: 1.75em;
+        font-weight: 400;
+        
+        li:hover {
+            transform: translateX(10px);
+        }
+
+        li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+
+            .twitter {
+                background-color: #3299ff;
+                span {
+                background-image: url("/twitterLogo.png");
+                }
+            }
+
+            .github {
+                background-color: #4e545a;
+                span {
+                background-image: url("/githubLogo.png");
+                }
+            }
+
+            .linkedin {
+                background-color: #0077ba;
+                span {
+                background-image: url("/linkedinLogo.png");
+                }
+            }
+
+            .email {
+                background-color: #db534b;
+                span {
+                background-image: url("/emailLogo.png");
+                }
+            }
+
+            a {
+                display: -webkit-flex;
+                -webkit-align-items: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 75px;
+                height: 55px;
+                padding-left: 20px;
+                margin-left: -20px;
+                transition: transform 425ms cubic-bezier(.05,.65,.18,1);
+                font-family: MontSerrat,Tahoma,Arial,sans-serif;
+                font-weight: 700;
+                font-size: inherit;
+                color: inherit;
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                cursor: pointer;
+                text-decoration: none;
+
+                span {
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    background-size: 100% auto;
+                    text-indent: -9999em;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .FollowMe {
+    text-align: left;
+    min-width: 300px;
+    max-height: 55px;
+    flex-basis: 3%;
+    ul { 
+        li:hover {
+            transform: translateY(10px);
+        }
+        margin-bottom: 0;
+        min-height: 55px;
+        margin-block-start: 0;
+        text-align: left;
+        li {
+            display: inline-block;
+        }
+    }
+    }
+}

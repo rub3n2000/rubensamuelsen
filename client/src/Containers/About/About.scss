@@ -9,7 +9,7 @@
     line-height: 18pt;
     flex-direction: column;
     position: relative;
-    min-height: 100vh;
+    min-height: 120vh;
 
     #AboutContentContainer {
         display: flex;
@@ -34,10 +34,19 @@
             align-items: center;
             #AboutText {
                 width: 60%;
-                display: flex;
-                flex-direction: column;
+
+                span {
+                    font-weight: 600;
+                }
+
+                .Colorized {
+                    color: #f700ff;
+                }
+
+                .ColorizedAlt {
+                    color: #ffa600;
+                }
             }
-            
         }
     }
 
@@ -47,7 +56,7 @@
         position: relative;
         max-height: 5%;
         justify-content: center;
-        margin-top: 15%;
+        margin-top: 25%;
         -webkit-transform-style: preserve-3d;
         -webkit-animation: spin 10s linear infinite;
         -moz-transform-style: preserve-3d;
@@ -85,55 +94,60 @@
         
         div {
             position: absolute;
-            background-color: f_color(fourth);
+            background-color: rgba(230, 230, 230, 0.445);
             max-width: 300px;
             max-height: 300px;
-            content: url(//jacekjeznach.com/wp-content/themes/jj/css/../img/logo1.png);
+            content: url(/reactLogo.png);
         }
 
         div:first-child {
             border-color: transparent transparent transparent rgba(50,50,50,.6);
-            -webkit-transform: translateZ(75px);
-            -moz-transform: translateZ(75px);
-            -ms-transform: 100px(75px);
-            transform: translateZ(75px);
+            -webkit-transform: translateZ(73px);
+            -moz-transform: translateZ(73px);
+            -ms-transform: translateZ(73px);
+            transform: translateZ(73px);
+            content: url(/angularLogo.png);
         }
 
         div:nth-child(2) {
             border-color: transparent transparent transparent rgba(50,50,50,.6);
-            -webkit-transform: rotateY(90deg) rotateZ(0) translateZ(75px);
-            -moz-transform: rotateY(90deg) rotateZ(0) translateZ(75px);
-            -ms-transform: rotateY(90deg) rotateZ(0) translateZ(75px);
-            transform: rotateY(90deg) rotateZ(0) translateZ(75px);
+            -webkit-transform: rotateY(90deg) rotateZ(0) translateZ(73px);
+            -moz-transform: rotateY(90deg) rotateZ(0) translateZ(73px);
+            -ms-transform: rotateY(90deg) rotateZ(0) translateZ(73px);
+            transform: rotateY(90deg) rotateZ(0) translateZ(73px);
+            content: url(/htmlLogo.png);
         }
 
         div:nth-child(3) {
             border-color: transparent transparent transparent rgba(50,50,50,.9);
-            -webkit-transform: rotateY(180deg) translateZ(75px);
-            -moz-transform: rotateY(180deg) translateZ(75px);
-            -ms-transform: rotateY(180deg) translateZ(75px);
-            transform: rotateY(180deg) translateZ(75px);
+            -webkit-transform: rotateY(180deg) translateZ(73px);
+            -moz-transform: rotateY(180deg) translateZ(73px);
+            -ms-transform: rotateY(180deg) translateZ(73px);
+            transform: rotateY(180deg) translateZ(73px);
+            content: url(/dotnetcoreLogo.png);
         }
         div:nth-child(4) {
             border-color: transparent transparent transparent rgba(50,50,50,.8);
-            -webkit-transform: rotateY(-90deg) translateZ(75px);
-            -moz-transform: rotateY(-90deg) translateZ(75px);
-            -ms-transform: rotateY(-90deg) translateZ(75px);
-            transform: rotateY(-90deg) translateZ(75px);
+            -webkit-transform: rotateY(-90deg) translateZ(73px);
+            -moz-transform: rotateY(-90deg) translateZ(73px);
+            -ms-transform: rotateY(-90deg) translateZ(73px);
+            transform: rotateY(-90deg) translateZ(73px);
+            content: url(/nodeLogo.png);
         }
         div:nth-child(5) {
             border-color: transparent transparent transparent rgba(50,50,50,.8);
-            -webkit-transform: rotateX(90deg) translateZ(75px);
-            -moz-transform: rotateX(90deg) translateZ(75px);
-            -ms-transform: rotateX(90deg) translateZ(75px);
-            transform: rotateX(90deg) translateZ(75px);
+            -webkit-transform: rotateX(90deg) translateZ(73px);
+            -moz-transform: rotateX(90deg) translateZ(73px);
+            -ms-transform: rotateX(90deg) translateZ(73px);
+            transform: rotateX(90deg) translateZ(73px);
         }
         div:nth-child(6) {
             border-color: transparent transparent transparent rgba(50,50,50,.8);
-            -webkit-transform: rotateX(-90deg) translateZ(75px);
-            -moz-transform: rotateX(-90deg) translateZ(75px);
-            -ms-transform: rotateX(-90deg) translateZ(75px);
-            transform: rotateX(-90deg) translateZ(75px);
+            -webkit-transform: rotateX(-90deg) translateZ(73px);
+            -moz-transform: rotateX(-90deg) translateZ(73px);
+            -ms-transform: rotateX(-90deg) translateZ(73px);
+            transform: rotateX(-90deg) translateZ(73px);
+            content: url(/sassLogo.png);
         }
     }
 }
@@ -147,7 +161,7 @@
         line-height: 18pt;
         flex-direction: column;
         position: relative;
-        min-height: 100vh;
+        min-height: 150vh;
     
         #AboutContentContainer {
             display: flex;
@@ -175,7 +189,6 @@
                     display: flex;
                     flex-direction: column;
                 }
-                
             }
         }
 
@@ -185,7 +198,7 @@
             position: relative;
             max-height: 5%;
             justify-content: center;
-            margin-top: 20%;
+            margin-top: 25%;
             -webkit-transform-style: preserve-3d;
             -webkit-animation: spin 10s linear infinite;
             -moz-transform-style: preserve-3d;
@@ -223,10 +236,10 @@
             
             div {
                 position: absolute;
-                background-color: grey;
+                background-color: rgba(230, 230, 230, 0.445);
                 max-width: 75px;
                 max-height: 75px;
-                content: url(//jacekjeznach.com/wp-content/themes/jj/css/../img/logo1.png);
+                content: url(/reactLogo.png);
             }
     
             div:first-child {
