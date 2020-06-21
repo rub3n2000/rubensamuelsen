@@ -16,6 +16,10 @@
         width: 60%;
         justify-content: center;
 
+        .ExtraMargin
+        {
+            margin-top: 10%;
+        }
         #AboutContent {
             text-align: center;
             h1 {
@@ -167,6 +171,10 @@
             display: flex;
             width: 100%;
             justify-content: center;
+            .ExtraMargin
+            {
+                margin-top: 20%;
+            }
     
             #AboutContent {
                 text-align: center;

@@ -1,16 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import './About.scss';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import axios from 'axios';
 
 import Nav from '../Nav/Nav';
 
 const About = ( props ) => {
+
+    const [hasMargin, setHasMargin] = useState(false);
+
+    useScrollPosition(
+        ({ prevPos, currPos }) => {
+          const tempHasMargin = currPos.y < (-window.innerHeight + 20);
+          if (tempHasMargin !== hasMargin) {
+            setHasMargin(tempHasMargin);
+          }
+        },
+        [hasMargin],
+        false,
+        false,
+        300
+    );
+    let classes = hasMargin?"ExtraMargin": "";
+
     return(
         <>
         <section id="About">
         <Nav SetPath={props.SetPath}/>
             <div id="AboutContentContainer">
-                <div id="AboutContent">
+                <div id="AboutContent" className={classes}>
                     <h1>
                         About
                     </h1>

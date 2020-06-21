@@ -8,9 +8,6 @@ const Projects = ( props ) => {
     return(
         <>
         <section id="Projects">
-            <div className="NavContainer">
-            <Nav SetPath={props.SetPath}/>
-            </div>
             <div id="ProjectsContentContainer">
                 <h1>
                     Projects
