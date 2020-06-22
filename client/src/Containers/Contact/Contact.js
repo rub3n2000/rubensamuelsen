@@ -24,16 +24,26 @@ const Contact = ( props ) => {
         <>
         <section id="Contact">
             <div id="ContactContentContainer">
-                <h1>
-                    Contact Me
-                </h1>
-                <form onSubmit={ContactSubmit}>
-                <input type="text" placeholder="Name" name="name" required/>
-                <input placeholder="Enter email" type="email" name="email" required/>
-                <textarea placeholder="Your Message" type="text" name="message"></textarea>
-                <button>Send Message!</button>
-                <div>{subFeedback}</div>
-                </form>
+                <div id="Label">
+                    <h1>
+                        Contact Me
+                    </h1>
+                </div>
+                <div id="ContactForm">
+                    <form onSubmit={ContactSubmit}>
+                        <input type="text" placeholder="Name" name="name" required/>
+                        <input placeholder="Enter email" type="email" name="email" required/>
+                        <textarea placeholder="Your Message" type="text" name="message"></textarea>
+                        <div id="ButtonAndFeedbackContact">
+                        <div id="FeedbackDiv">{subFeedback}</div>
+                        <div id="ButtonContactDiv"><button>Send Message!</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="TriangleTop">
+
             </div>
         </section>
         </>
