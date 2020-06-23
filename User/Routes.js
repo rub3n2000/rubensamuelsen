@@ -10,7 +10,6 @@ const isLoggedIn = require('../middleware').isLoggedIn;
 const User = require('./Model');
 
 router.post('/register', function(req, res) { 
-  console.log(req.body);
     Users=new User({username : req.body.username, isAdmin: false}); 
 
         User.register(Users, req.body.password, function(err, user) { 
