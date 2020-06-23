@@ -24,6 +24,17 @@ router.get('/:id', function(req,res) {
   });
 });
 
+router.delete('/:id', function(req,res) {
+  Project.findByIdAndDelete(req.params.id).exec(function(err, project){
+    if(err) {
+      res.send(err);
+    }
+    else {
+      res.send(project);
+    }
+  });
+});
+
 //Get all projects route.
 router.get('/', function(req,res) {
   Project.find({}).populate("tags").exec(function(err, projects){
@@ -38,6 +49,7 @@ router.get('/', function(req,res) {
 
 //New Project Route
 router.post("/", isAdmin, function(req,res) {
+  var myTags = [];
   Project.findOne({$or: [
     {name: req.body.project.name},
     {sourceURL: req.body.project.sourceURL},
@@ -59,42 +71,35 @@ router.post("/", isAdmin, function(req,res) {
         description: req.body.project.description,
         screenshotURL: req.body.project.screenshotURL,
         tags: []
-      }, async function(err,newProject) {
+      }, function(err,newProject) {
         if(err) {
           console.log(err);
         }
         else {
           if(req.body.tags && Array.isArray(req.body.tags)) {
-            const promises = req.body.tags.map(function(tag) {
-              console.log("hey");
-              Tag.findOne({name: tag}, async function(err, dbTag) {
+              Tag.find({name: { $in: req.body.tags}}, async function(err, dbTags) {
                 if(err) {
                   console.log(err);
                 }
-                if(dbTag == null) {
-                  Tag.create({name: tag}, async function(err, newTag) {
-                    if(err) {
-                      console.log(err);
-                    }
-                    else {
-                      console.log("ye");
-                      newProject.tags.push(newTag)
-                      return newProject.save();
-                    }
-                  })
+                for(let i = 0; i < req.body.tags.length; i++) {
+                  const result = dbTags.find(u => u.name == req.body.tags[i]);
+                  if(result != undefined && result != null) {
+                    myTags.push(result);
+                  }
                 }
-                else {
-                  console.log("yup");
-                  newProject.tags.push(dbTag)
-                  return newProject.save();
-                }
+              }).then(() => {
+                newProject.tags = myTags;
+                newProject.save((err, updatedNewProject) => {
+                  if(err) {
+                    console.log(err);
+                  }
+                })
               });
-            });
-            await Promise.all(promises);
+            }
           }
           res.status(200).send(newProject);
-      }
-      });
+        }
+      );
     }
     else {
       res.status(400).send("Duplicate values " + project + " already has one of your values");

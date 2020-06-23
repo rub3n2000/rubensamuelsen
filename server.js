@@ -10,6 +10,7 @@ const session = require("express-session");
 const LocalStrategy = require('passport-local').Strategy;  
 const userRoutes = require('./User/Routes');
 const projectRoutes = require('./Project/Routes');
+const tagRoutes = require('./Tag/Routes');
 const secrets = require('./secrets');
 
 const app = express();
@@ -18,7 +19,7 @@ mongoose.connect("mongodb+srv://rub3n2000:"+secrets.mongoPassword+"@rubensamuels
 //#endregion
 
 //#region  App setup statements
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
+//app.use(enforce.HTTPS({ trustProtoHeader: true }))
 app.use(express.static(path.join(__dirname, '/client/build')));
 app.use(require("express-session")({
     secret: secrets.authKey,
@@ -36,6 +37,7 @@ passport.deserializeUser(User.deserializeUser());
 passport.use(new LocalStrategy(User.authenticate())); 
 app.use('/api/user', userRoutes);
 app.use('/api/project', projectRoutes);
+app.use('/api/tag', tagRoutes);
 //#endregion
 
 //#region Client Rendering Route
