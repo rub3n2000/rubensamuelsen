@@ -4,6 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
+  background-color: #cecece;
+  width: 100%;
+  height: 100%;
 }
 
 code {

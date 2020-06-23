@@ -2,13 +2,15 @@
 
 .App {
   min-height: 100%;
+  background-color: #cecece;
   overflow-x: hidden;
+  width: 100%;
 }
 
 section {
-  background-color: #252934;;
+  background-color: #252934;
 }
 
 section:nth-of-type(even) {
-  background-color: white;
+  background-color: #cecece;
 }

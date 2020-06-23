@@ -10,6 +10,8 @@ const navigationItems = ( props ) => {
         <div className={styles.NavigationItems}>
         <NavigationItem closed={props.closed} link="#LandingPage"> Home </NavigationItem>
         <NavigationItem closed={props.closed} link="#About"> About </NavigationItem>
+        <NavigationItem closed={props.closed} link="#Projects"> My Projects </NavigationItem>
+        <NavigationItem closed={props.closed} link="#Contact"> Contact Me </NavigationItem>
         <div className={styles.LanguageButtons}>
         </div>
         </div>
