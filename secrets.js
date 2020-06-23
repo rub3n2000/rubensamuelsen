@@ -1,4 +1,4 @@
 module.exports = {
-    authKey: "dasdoakwdapdo48+123901o¨podiajuhdyad9+0alpdwada_dawd13!#12",
-    mongoPassword: "4AwsnuI9rzQmwT3A"
+    authKey: "42134134123#_1232145123#sadasSDADW213d",
+    mongoPassword: "QO8ybQENOGceQ63W"
 };
