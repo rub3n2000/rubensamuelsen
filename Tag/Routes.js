@@ -15,7 +15,7 @@ router.get('/:id', function(req,res) {
       res.status(500).send(err);
     }
     else {
-      res.send(tag);
+      res.status(200).send(tag);
     }
   });
 });
@@ -27,7 +27,7 @@ router.get('/', function(req,res) {
       res.status(500).send(err);
     }
     else {
-      res.send(tags);
+      res.status(200).send(tags);
     }
   });
 });
@@ -38,7 +38,7 @@ router.delete('/:id', function(req,res) {
         res.send(err);
       }
       else {
-        res.send(tag);
+        res.status(202).send(tag);
       }
     });
 });
@@ -55,7 +55,7 @@ router.post("/", isAdmin, function(req,res) {
                   res.status(500).send(err);
                 }
                 else {
-                  res.send(newTag)
+                  res.status(201).send(newTag)
                 }
             });
         }

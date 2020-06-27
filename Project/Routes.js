@@ -19,7 +19,7 @@ router.get('/:id', function(req,res) {
       res.send(err);
     }
     else {
-      res.send(project);
+      res.status(200).send(project);
     }
   });
 });
@@ -30,7 +30,7 @@ router.delete('/:id', function(req,res) {
       res.send(err);
     }
     else {
-      res.send(project);
+      res.status(202).send(project);
     }
   });
 });
@@ -42,7 +42,7 @@ router.get('/', function(req,res) {
       res.send(err);
     }
     else {
-      res.send(projects);
+      res.status(200).send(projects);
     }
   });
 });
@@ -97,7 +97,7 @@ router.post("/", isAdmin, function(req,res) {
               });
             }
           }
-          res.status(200).send(newProject);
+          res.status(201).send(newProject);
         }
       );
     }

@@ -24,10 +24,10 @@ router.post('/register', function(req, res) {
 
 router.post('/login', function(req, res) { 
     if(!req.body.username){ 
-      res.json({success: false, message: "Username was not given"}) 
+      res.status(400).json({success: false, message: "Username was not given"}) 
     } else { 
       if(!req.body.password){ 
-        res.json({success: false, message: "Password was not given"}) 
+        res.status(400).json({success: false, message: "Password was not given"}) 
       }else{ 
         passport.authenticate('local', function (err, user, info) {  
            if(err){ 
@@ -35,7 +35,7 @@ router.post('/login', function(req, res) {
              console.log(err);
            } else{ 
             if (!user) { 
-              res.json({success: false, message: 'username or password incorrect'}) 
+              res.status(401).json({success: false, message: 'username or password incorrect'}) 
             } else{ 
               req.login(user, function(err){ 
                 if(err){ 
@@ -45,7 +45,7 @@ router.post('/login', function(req, res) {
                   const token = jwt.sign({userId : user._id,  
                      username:user.username}, secrets.authKey,  
                         {expiresIn: '24h'}) 
-                  res.json({success:true, message:"Authentication successfull", token: token }); 
+                  res.status(201).json({success:true, message:"Authentication successfull", token: token }); 
                 } 
               }) 
             } 
@@ -61,7 +61,7 @@ router.get('/me', isLoggedIn, function(req,res) {
       res.send(err);
     }
     else {
-      res.send(user);
+      res.status(200).send(user);
     }
   });
 });
@@ -72,7 +72,7 @@ router.get("/AmIAdmin", isLoggedIn, function(req,res) {
       res.send(err);
     }
     else {
-      res.send({result: user.isAdmin});
+      res.status(200).send({result: user.isAdmin});
     }
   });
 })
