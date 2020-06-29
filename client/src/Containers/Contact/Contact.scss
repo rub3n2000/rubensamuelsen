@@ -18,6 +18,7 @@
         border-left: 25px solid transparent;
         border-right: 25px solid transparent;
         border-top: 25px solid #252934;
+        cursor: pointer;
     }
     
 
@@ -83,13 +84,32 @@
                     justify-content: flex-end;
 
                     #ButtonContactDiv {
-
+                        background-color: #11344d;
+                        color: #fff;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        padding: 1%;
+                        box-shadow: -2px 1px #000028;
+                        cursor: pointer;
+                        transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
                         button {
-                            background-color: transparent;
-                            color: white;
-                            border: 2px solid white;
+                            background-color: #11344d;
                             padding: 5%;
                             font-size: 1.2em;
+                            transition: 0.5s;
+                            border: 0;
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+
+                    #ButtonContactDiv:hover {
+                        transform: scale(1.2,1.2);
+                        background-color: #000028;
+                        box-shadow: -3px 2px #a8a8e6;
+
+                        button {
+                            background-color: #000028;
                         }
                     }
 

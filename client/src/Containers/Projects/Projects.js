@@ -63,7 +63,7 @@ const Projects = ( props ) => {
     return(
         <>
         <section id="Projects">
-            <div id="ProjectsContentContainer">
+            <div className="ProjectsContentContainer">
                 <div>
                     <h1>
                         Projects

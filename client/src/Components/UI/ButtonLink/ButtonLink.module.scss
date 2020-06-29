@@ -1,0 +1,17 @@
+.ButtonLink {
+    background-color: #11344d;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 1%;
+    border-radius: 5%;
+    box-shadow: -2px 1px #000028;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s, box-shadow 0.5s;
+}
+
+.ButtonLink:hover {
+    transform: scale(1.2,1.2);
+    background-color: #000028;
+    box-shadow: -3px 2px #a8a8e6;
+}

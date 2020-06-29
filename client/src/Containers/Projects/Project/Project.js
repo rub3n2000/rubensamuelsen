@@ -16,7 +16,9 @@ const Project = (props) => {
       onClick={props.click}
     >
       <div className={hovered?styles.Image + " " + styles.Faded:styles.Image}>
-        <img src={props.project.screenshotURL} alt={props.project.name}></img>
+        <img src={props.project.screenshotURL} 
+        srcSet="https://i.ibb.co/LJzFYpQ/Untitled.png" 
+        alt={props.project.name}></img>
       </div>
       <div className={hovered ? styles.MoreInfo : styles.Invisible}>
         <div className={styles.Label}>

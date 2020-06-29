@@ -42,8 +42,10 @@ const Contact = ( props ) => {
                 </div>
             </div>
 
-            <div id="TriangleTop">
-
+            <div onClick={() => {
+                window.location.assign('/')
+            }} id="TriangleTop">
+            
             </div>
         </section>
         </>

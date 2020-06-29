@@ -25,7 +25,6 @@ module.exports = {
         });
         }
         else {
-            console.log("how");
             res.status(401).send(null);
         }
     }

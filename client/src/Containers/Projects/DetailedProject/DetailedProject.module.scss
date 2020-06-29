@@ -1,15 +1,125 @@
-.Project {
-    min-width: 100%;
-    min-height: 200%;
+.DetailedProject {
+    min-width: 1080px;
+    min-height: 700px;
+    max-width: 1080px;
     position: relative;
     display: flex;
     background-color: #cecece;
     justify-content: center;
     text-align: center;
-    cursor: pointer;
     z-index: 200;
-    position: absolute;
     flex-direction: column;
     align-content: center;
     margin: 2%;
+    box-shadow: 4px 4px #585858;
+    padding: 1%;
+
+    .Container {
+        min-width: 90%;
+        max-width: 90%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ButtonSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-left: 5%;
+        margin-bottom: 1%;
+
+        div {
+            margin-right: 2%;
+        }
+    }
+
+    .Header {
+        display: flex;
+        justify-content: flex-start;
+        text-align: start;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-top: 2%;
+        #Title {
+            color: #252934;
+            text-align: start;
+            padding: 0;
+            margin:0;
+            border-bottom: 0;
+            margin-bottom: 2%;
+        }
+
+        h4 {
+            margin: 0;
+            margin-bottom: 5%;
+        }
+    }
+
+    .About {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        text-align: start;
+        flex-wrap: wrap;
+        margin-left: 5%;
+        margin-top: 2%;
+
+        .AboutLabel {
+            margin-bottom: 0;
+            padding-bottom: 1%;
+            border-bottom: 2px solid white;
+            color: #252934;
+        }
+
+        hr {
+            border: 0;
+            border-top-color: currentcolor;
+            border-top-style: none;
+            border-top-width: 0px;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: 0px;
+            height: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    .TagContainer {
+        height: 10%;
+        max-height: 10%;
+        display: flex;
+        flex-wrap: wrap;
+        min-width: 100%;
+        div {
+        padding: 1%;
+        background-color: #252934;
+        margin: 5%;
+        color: white;
+        font-weight: 800;
+        box-shadow: 2px 2px black;
+        margin-left: 5%;
+        }
+    }
+
+    .Image {
+        max-height: 80%;
+        max-width: 100%;
+        margin-left: 5%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        align-items: center;
+        opacity: 1;
+        overflow: hidden;
+        transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -webkit-transition: opacity .5s ease-in-out;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 }
