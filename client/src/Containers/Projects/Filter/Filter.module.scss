@@ -1,0 +1,95 @@
+$height: 26px;
+$margin: 4px;
+
+.Filter {
+    .FilterDivContent {
+        .rs__custom-style {
+            position: relative;
+            width: auto;
+            max-width: 100%;
+
+            .rs__control {
+                position: relative;
+                border: none;
+                outline: none;
+                border-radius: 2px;
+                min-height: $height;
+                height: fit-content;
+                padding: $margin / 2 $margin;
+                box-shadow: 0 0 0 1px fade(black, 4%);
+
+                .rs__control--is-focused {
+                    box-shadow: 0 0 0 1px #3878c7;
+                }
+
+                .rs__value-container {
+                    padding: 0;
+                    margin: -$margin / 2;
+
+                    .rs__multi-value {
+                        margin: $margin / 2;
+                        background-color: #3878c7;
+                        color: white;
+
+                        .rs__multi-value__label {
+                            color: white;
+                        }
+
+                        .rs__multi-value__remove {
+                            &:hover {
+                                background-color: initial;
+                                cursor: pointer;
+                            }
+
+                            > svg {
+                                background-color: white;
+                                border-radius: 20px;
+                                color: #3878c757;
+                            }
+                        }
+                    }
+                }
+
+                .rs__indicators {
+
+                    .rs__indicator-separator {
+                        display: none;
+                    }
+
+                    .rs__dropdown-indicator {
+                        cursor: pointer;
+                        height: $height - (2 * $margin);
+                        width: $height - (2 * $margin);
+                        padding: 0px;
+                        margin-right: 1px;
+
+                        > svg {
+                            color: rgb(0, 0, 0);
+                        }
+                    }
+                }
+            }
+
+            .rs__menu {
+                z-index: 2;
+                margin-top: $margin;
+                box-shadow: 0 0 0 1px fade(black, 4%),
+                    0 4px 12px fade(black, 12%);
+                border-radius: 2px;
+
+                .rs__menu-list {
+
+                    .rs__option {
+                        padding: 4px 8px;
+                        cursor: pointer;
+                        
+                        .rs__option--is-focused {
+                            background-color: #3878c7;
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
