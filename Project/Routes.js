@@ -24,7 +24,7 @@ router.get('/:id', function(req,res) {
   });
 });
 
-router.delete('/:id', function(req,res) {
+router.delete('/:id', isAdmin, function(req,res) {
   Project.findByIdAndDelete(req.params.id).exec(function(err, project){
     if(err) {
       res.send(err);

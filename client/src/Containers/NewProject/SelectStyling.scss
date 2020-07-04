@@ -1,0 +1,106 @@
+@import '../../Sass/GlobalFunctions.module.scss';
+@import '../../Sass/GlobalMixins.module.scss';
+
+$height: 30px;
+$margin: 8px;
+.rs2__custom-style {
+    margin-top: 2%;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    font-weight: bold;
+    color: white;
+    background-color: f_color(primary);
+    .rs2__control {
+        position: relative;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        min-height: $height;
+        height: fit-content;
+        padding: $margin / 2 $margin;
+        box-shadow: 0 0 0 1px fade(black, 4%);
+        color: white;
+        background-color: #252934;
+
+        .rs2__control--is-focused {
+            box-shadow: 0 0 0 1px #3878c7;
+        }
+
+        .rs2__value-container {
+            padding: 0;
+            margin: -$margin / 2;
+            background-color: f_color(primary);
+
+            .rs2__multi-value {
+                margin: $margin / 2;
+                background-color: white;;
+                color: f_color(primary);
+
+                .rs2__multi-value__label {
+                    color: f_color(primary);
+                    background-color: white;
+                }
+
+                .rs2__multi-value__remove {
+                    background-color: white;
+                    color: f_color(primary);
+                    &:hover {
+                        background-color: initial;
+                        cursor: pointer;
+                        background-color: white
+                    }
+
+                    > svg {
+                        background-color: f_color(primary);
+                        border-radius: 20px;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .rs2__indicators {
+
+            .rs2__indicator-separator {
+                display: none;
+            }
+
+            .rs2__dropdown-indicator {
+                cursor: pointer;
+                height: $height - (2 * $margin);
+                width: $height - (2 * $margin);
+                padding: 0px;
+                margin-right: 1px;
+
+                > svg {
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+
+    .rs2__menu {
+        z-index: 2;
+        margin-top: $margin;
+        box-shadow: 0 0 0 1px fade(black, 4%),
+            0 4px 12px fade(black, 12%);
+        border-radius: 2px;
+        color: white;
+        background-color: f_color(primary);
+        .rs2__menu-list {
+            color: white;
+            background-color: f_color(primary);
+            .rs2__option {
+                padding: 4px 8px;
+                cursor: pointer;
+                background-color: f_color(primary);
+                color: white;
+                .rs2__option--is-focused {
+                    background-color: #3878c7;
+                    color:white;
+                }
+            }
+        }
+    }
+}

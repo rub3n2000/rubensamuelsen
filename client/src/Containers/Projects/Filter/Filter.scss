@@ -1,0 +1,109 @@
+$height: 26px;
+$margin: 4px;
+
+.Filter {
+    color: black;
+    label {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+}
+
+.rs__custom-style {
+    margin-top: 2%;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    .rs__control {
+        position: relative;
+        border: none;
+        outline: none;
+        border-radius: 2px;
+        min-height: $height;
+        height: fit-content;
+        padding: $margin / 2 $margin;
+        box-shadow: 0 0 0 1px fade(black, 4%);
+        color: black;
+
+        .rs__control--is-focused {
+            box-shadow: 0 0 0 1px #3878c7;
+        }
+
+        .rs__value-container {
+            padding: 0;
+            margin: -$margin / 2;
+            background-color: white;
+
+            .rs__multi-value {
+                margin: $margin / 2;
+                background-color: #252934;;
+                color: white;
+
+                .rs__multi-value__label {
+                    color: white;
+                    background-color: #252934;
+                }
+
+                .rs__multi-value__remove {
+                    background-color: #252934;
+                    color: black;
+                    &:hover {
+                        background-color: initial;
+                        cursor: pointer;
+                        background-color: #252934
+                    }
+
+                    > svg {
+                        background-color: white;
+                        border-radius: 20px;
+                        color: #3878c757;
+                    }
+                }
+            }
+        }
+
+        .rs__indicators {
+
+            .rs__indicator-separator {
+                display: none;
+            }
+
+            .rs__dropdown-indicator {
+                cursor: pointer;
+                height: $height - (2 * $margin);
+                width: $height - (2 * $margin);
+                padding: 0px;
+                margin-right: 1px;
+
+                > svg {
+                    color: rgb(161, 134, 134);
+                }
+            }
+        }
+    }
+
+    .rs__menu {
+        z-index: 2;
+        margin-top: $margin;
+        box-shadow: 0 0 0 1px fade(black, 4%),
+            0 4px 12px fade(black, 12%);
+        border-radius: 2px;
+        color: black;
+        .rs__menu-list {
+            color: black;
+            .rs__option {
+                padding: 4px 8px;
+                cursor: pointer;
+                color: black;
+                .rs__option--is-focused {
+                    background-color: #3878c7;
+                    color:black;
+                }
+            }
+        }
+    }
+}

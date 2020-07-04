@@ -32,7 +32,7 @@ router.get('/', function(req,res) {
   });
 });
 
-router.delete('/:id', function(req,res) {
+router.delete('/:id', isAdmin, function(req,res) {
     Tag.findByIdAndDelete(req.params.id).exec(function(err, tag){
       if(err) {
         res.send(err);
@@ -51,7 +51,6 @@ router.post("/", isAdmin, function(req,res) {
         if(tag == null || tag == undefined) {
             Tag.create({name: req.body.name}, function(err, newTag) {
                 if(err) {
-                console.log("hey");
                   res.status(500).send(err);
                 }
                 else {

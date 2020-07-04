@@ -1,96 +1,46 @@
-import React from 'react';
+import React from "react";
 
-import styles from './Filter.module.scss';
+import "./Filter.scss";
+import Select from "react-select";
 
 const Filter = (props) => {
+  let filterdivContent;
+  let projects = props.projects;
+  const tags = [];
 
-    let filterdivContent;
+  if (projects !== null && projects !== undefined && Array.isArray(projects)) {
+    for (let i = 0; i < projects.length; i++) {
+      for(let j = 0; j < projects[i].tags.length; j++) {
+          if(tags.includes(projects[i].tags[j].name) == false) {
+              tags.push(projects[i].tags[j].name);
+          }
+      }
+    }
+  }
 
-    let options = [
-        { value: "openTilbud", label: "Åpne tilbud " + openTilbudCount },
-        { value: "closedTilbud", label: "Lukkede tilbud " + closedTilbudCount },
-        {
-            value: "notStartedProjects",
-            label: "Ikke startet prosjekter " + notStartedProjectsCount,
-        },
-        {
-            value: "startetButNotDoneProjects",
-            label:
-                "Startet, men ikke ferdige prosjekter " +
-                startedButNotDoneProjectsCount,
-        },
-        {
-            value: "doneButNotClosedProjects",
-            label:
-                "Ferdige, men ikke avsluttede prosjekter " +
-                doneButNotClosedProjectsCount,
-        },
-        {
-            value: "closedProjects",
-            label: "Avsluttede prosjekter " + closedProjectsCount,
-        },
-    ];
+  let options = [];
 
-    filterdivContent = (
-        <div className="FilterDivContent">
-            <label>Tags:</label>
-            <Select
-                placeholder="Alle statuser"
-                options={options}
-                isMulti
-                onChange={onFilterChange}
-                classNamePrefix="rs"
-                className="rs__custom-style"
-            />
-        </div>
-    );
+  if(tags.length != 0 && options.length < 1) {
+      for(let i = 0; i < tags.length; i++) {
+      options.push({value: tags[i], label: tags[i]});
+      }
+   }
 
-    const onFilterChange = (e) => {
-    resetPaging();
-    setShowOpenTilbud(false);
-    setShowClosedTilbud(false);
-    setShowNotStartedProjects(false);
-    setShowStartedButNotDoneProjects(false);
-    setShowDoneButNotClosedProjects(false), setShowClosedProjects(false);
-    if (e && Array.isArray(e) && e.length > 0) {
-        for (let i = 0; i < e.length; i++) {
-            if (e[i].value) {
-                switch (e[i].value) {
-                    case "openTilbud":
-                        setShowOpenTilbud(true);
-                        break;
-                    case "closedTilbud":
-                        setShowClosedTilbud(true);
-                        break;
-                    case "notStartedProjects":
-                        setShowNotStartedProjects(true);
-                        break;
-                    case "startetButNotDoneProjects":
-                        setShowStartedButNotDoneProjects(true);
-                        break;
-                    case "doneButNotClosedProjects":
-                        setShowDoneButNotClosedProjects(true);
-                        break;
-                    case "closedProjects":
-                        setShowClosedProjects(true);
-                        break;
-                        }
-                    }
-                }
-            } else {
-                setShowOpenTilbud(true);
-                setShowClosedTilbud(true);
-                setShowNotStartedProjects(true);
-                setShowStartedButNotDoneProjects(true);
-                setShowDoneButNotClosedProjects(true), setShowClosedProjects(true);
-            }
-    };
+  filterdivContent = (
+    <div className="FilterDivContent">
+      <label>Tags:</label>
+      <Select
+        placeholder="All tags"
+        options={options}
+        isMulti
+        onChange={props.onFilterChange}
+        classNamePrefix="rs"
+        className="rs__custom-style"
+      />
+    </div>
+  );
 
-    return(
-        <div className={styles.Filter}>
-
-        </div>
-    );
-}
+  return <div className={"Filter"}>{filterdivContent}</div>;
+};
 
 export default Filter;

@@ -1,0 +1,112 @@
+.UnAuthorized {
+    margin: 0 auto;
+    text-align: center;
+    padding: 2%;
+
+    hr {
+        border: 1px solid rgb(255, 0, 0);
+    }
+
+    .Button {
+        color: #3878c7;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.5em;
+        width: 20%;
+        outline: currentcolor none medium;
+        transition: all 0.1s ease 0s;
+    }
+
+    .Info {
+        background-color: #ffecdb;
+        border: 2px solid #ffbb61;
+        border-top-left-radius: 2%;
+        border-top-right-radius: 2%;
+        border-bottom-left-radius: 2%;
+        border-bottom-right-radius: 2%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 4px 0px;
+        padding-left: 34px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-right: 14px;
+        font-weight: bold;
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+
+        .Trekant {
+            color:#ffbb61;
+            font-size: 2em;
+            flex-basis: 20%;
+        }
+
+        .Text {
+            text-align: left;
+        }
+    }
+}
+
+@media (max-width: 1000px) { 
+    .UnAuthorized {
+        margin: 0 auto;
+        text-align: center;
+        padding: 2%;
+    
+        hr {
+            border: 1px solid rgb(255, 0, 0);
+        }
+    
+        .Button {
+            color: #3878c7;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.5em;
+            width: 100%;
+            outline: currentcolor none medium;
+            transition: all 0.1s ease 0s;
+            display: flex;
+            flex-direction: column;
+            margin-top: 2%;
+        }
+    
+        .Info {
+            background-color: #ffecdb;
+            border: 2px solid #ffbb61;
+            border-top-left-radius: 2%;
+            border-top-right-radius: 2%;
+            border-bottom-left-radius: 2%;
+            border-bottom-right-radius: 2%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 4px 0px;
+            padding-left: 14px;
+            padding-bottom: 6px;
+            padding-top: 6px;
+            padding-right: 7px;
+            font-weight: bold;
+            font-size: 1.5em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+    
+            .Trekant {
+                color:#ffbb61;
+                font-size: 2em;
+                flex-basis: 20%;
+            }
+    
+            .Text {
+                text-align: left;
+                
+                h2  {
+                    font-size: 1em;
+                }
+
+                h4 {
+                    font-size: 0.75em
+                }
+            }
+        }
+    }
+}

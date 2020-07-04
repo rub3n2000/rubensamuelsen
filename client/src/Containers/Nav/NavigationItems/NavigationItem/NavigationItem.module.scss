@@ -20,7 +20,7 @@
 
     a {
         width: 100%;
-        background-color: f_color(third);
+        background-color: f_color(fifth);
         height: max-content;
         text-decoration: none;
         text-transform: uppercase;
@@ -36,7 +36,7 @@
 
     a:hover {
         transform: scale(1.2,1.2);
-        background-color: transparentize($color: f_color(third), $amount: 0.2);
+        background-color: transparentize($color: f_color(fifth), $amount: 0.2);
     }
 }
 
@@ -51,7 +51,7 @@
     
         a {
             width: 100%;
-            background-color: f_color(third);
+            background-color: f_color(fifth);
             height: max-content;
             text-decoration: none;
             text-transform: uppercase;

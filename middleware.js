@@ -13,13 +13,11 @@ module.exports = {
         User.findById(req.user._id, function(err, user){
             if(err) {
                 res.status(500).send(err);
-              console.log("wadhy");
             }
             else {
                 if(user.isAdmin) {
                     return next()
                 }
-                console.log("why");
                 res.status(401).send(null);
             }
         });

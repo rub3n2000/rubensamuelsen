@@ -13,18 +13,34 @@ const Project = (props) => {
       className={styles.Project}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={props.click}
+      onClick={!props.isAdmin?props.click: null}
     >
-      <div className={hovered?styles.Image + " " + styles.Faded:styles.Image}>
-        <img src={props.project.screenshotURL} 
-        srcSet="https://i.ibb.co/LJzFYpQ/Untitled.png" 
-        alt={props.project.name}></img>
+      <div
+        className={hovered ? styles.Image + " " + styles.Faded : styles.Image}
+      >
+        <img
+          src={props.project.screenshotURL}
+          srcSet="https://i.ibb.co/LJzFYpQ/Untitled.png"
+          alt={props.project.name}
+        ></img>
       </div>
       <div className={hovered ? styles.MoreInfo : styles.Invisible}>
         <div className={styles.Label}>
           <h2>{props.project.name}</h2>
         </div>
-        <div className={styles.TagContainer}>{tags}</div>
+        <div className={styles.TagContainer}>
+          {!props.isAdmin ? (
+            tags
+          ) : (
+            <div className={styles.Deletebutton}><button
+              onClick={() => {
+                props.deleteProject(props.project._id);
+              }}
+            >
+              Delete Project
+            </button></div>
+          )}
+        </div>
       </div>
     </div>
   );

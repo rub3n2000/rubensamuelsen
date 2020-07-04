@@ -10,8 +10,8 @@ function App() {
     <div className={styles.App}>
       <BrowserRouter>
       <Switch>
-      <Route path="/admin" render={AdminPanel}/>
-      <Route path="/" render={MainPage}/>
+      <Route path="/admin" component={AdminPanel}/>
+      <Route path="/" component={MainPage}/>
       </Switch>
       </BrowserRouter>
     </div>
