@@ -1,6 +1,6 @@
 module.exports = {
-  authKey: "asdsadogjopamdGAKD;DQDSAD21345213AWE!FASBV_adsga5773%53/&",
-  mongoPassword: "issiju5MlTyGAYJ5",
+  authKey: "dsadjgojp8uhij7ydaDWAD¤!321daw132%%&dadd_1235132DA21351%/Q¤!RA!123G_AD_",
+  mongoPassword: "eIxjCRQJ9vafQS2W",
 };
 
 //not real secrets, just for demo purposes. Been changed since push.
