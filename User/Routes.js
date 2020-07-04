@@ -90,9 +90,8 @@ router.get("/AmIAdmin", function (req, res) {
         res.status(200).send({ result: user.isAdmin });
       }
     });
-  }
-  else {
-  res.status(204).send({ result: null });
+  } else {
+    res.status(204).send({ result: null });
   }
 });
 

@@ -10,21 +10,21 @@ const Filter = (props) => {
 
   if (projects !== null && projects !== undefined && Array.isArray(projects)) {
     for (let i = 0; i < projects.length; i++) {
-      for(let j = 0; j < projects[i].tags.length; j++) {
-          if(tags.includes(projects[i].tags[j].name) == false) {
-              tags.push(projects[i].tags[j].name);
-          }
+      for (let j = 0; j < projects[i].tags.length; j++) {
+        if (tags.includes(projects[i].tags[j].name) == false) {
+          tags.push(projects[i].tags[j].name);
+        }
       }
     }
   }
 
   let options = [];
 
-  if(tags.length != 0 && options.length < 1) {
-      for(let i = 0; i < tags.length; i++) {
-      options.push({value: tags[i], label: tags[i]});
-      }
-   }
+  if (tags.length != 0 && options.length < 1) {
+    for (let i = 0; i < tags.length; i++) {
+      options.push({ value: tags[i], label: tags[i] });
+    }
+  }
 
   filterdivContent = (
     <div className="FilterDivContent">

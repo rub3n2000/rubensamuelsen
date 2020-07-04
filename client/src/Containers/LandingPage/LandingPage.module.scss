@@ -1,7 +1,7 @@
 @import '../../Sass/GlobalFunctions.module.scss';
 @import '../../Sass/GlobalMixins.module.scss';
 
-#LandingPage {
+.LandingPage {
     color: #fff;
     align-items: center;
     display: flex;
@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     width: 100vw;
-    background: #252934;
+    background: f_color(primary);
     line-height: 18pt;
     color: #fff;
 }
@@ -35,7 +35,7 @@
     text-align: center;
     z-index: 1;
 
-    #ViewMyWork {
+    .ViewMyWork {
         width:66%;
         margin-top: 5%;
         a {
@@ -59,7 +59,7 @@
         }
     }
 
-    #ViewMyWork:hover {
+    .ViewMyWork:hover {
         transform: scale(1.2,1.2);
     }
     
@@ -70,12 +70,12 @@
     }
 
     span {
-        color: rgb(247, 0, 255);
+        color: f_color(third);
     }
 }
 
 @include mobile {
-    #LandingPage {
+    .LandingPage {
         color: #fff;
         align-items: center;
         display: flex;
@@ -110,7 +110,7 @@
         text-align: center;
         z-index: 1;
     
-        #ViewMyWork {
+        .ViewMyWork {
             width:66%;
             margin-top: 5%;
             a {
@@ -134,7 +134,7 @@
             }
         }
     
-        #ViewMyWork:hover {
+        .ViewMyWork:hover {
             transform: scale(1.1,1.1);
         }
         
@@ -145,7 +145,7 @@
         }
     
         span {
-            color: rgb(247, 0, 255);
+            color: f_color(third);
         }
     }
 }

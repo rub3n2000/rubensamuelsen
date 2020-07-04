@@ -1,25 +1,34 @@
-import React, { useState, useEffect } from "react";
-import "./Projects.scss";
-import axios from "axios";
-
-import Project from "./Project/Project";
-import DetailedProject from "./DetailedProject/DetailedProject";
-import Filter from "../Projects/Filter/Filter";
-
-import Nav from "../Nav/Nav";
-import Backdrop from "../../Components/UI/Backdrop/Backdrop";
+//#region Imports
+  //#region Module dependencies
+  import React, { useState, useEffect } from "react";
+  import axios from "axios";
+  //#endregion
+  //#region Component imports
+  import Project from "./Project/Project";
+  import DetailedProject from "./DetailedProject/DetailedProject";
+  import Filter from "../Projects/Filter/Filter";
+  import Backdrop from "../../Components/UI/Backdrop/Backdrop";
+  //#endregion
+  //#region Style imports
+  import styles from "./Projects.module.scss";
+  //#endregion
+//#endregion
 
 const Projects = (props) => {
+
+  //#region State declerations
   const [detailedView, setDetailedView] = useState(false);
   const [projects, setProjects] = useState(null);
   const [projectForDetailedView, setProjectForDetailedView] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
+  //#endregion
 
-  const HideDetailedViewHandler = () => {
+  //#region Event handlers
+  const hideDetailedViewHandler = () => {
     setDetailedView(false);
   };
 
-  const OpenDetailedView = (project) => {
+  const openDetailedView = (project) => {
     setProjectForDetailedView(project);
     setDetailedView(true);
   };
@@ -35,8 +44,10 @@ const Projects = (props) => {
       setSelectedTags(tagArray);
     }
   };
+  //#endregion
 
-  const FetchProjects = async () => {
+  //#region Helper methods
+  const fetchProjects = async () => {
     let updatedProjects;
     let response = await axios.get("/api/project");
     if (response.status == 200) {
@@ -47,37 +58,40 @@ const Projects = (props) => {
     return updatedProjects;
   };
 
-  const ArrayContainsAllElementsOfTarget = (arr, target) => target.every(v => arr.includes(v));
+  const arrayContainsAllElementsOfTarget = (arr, target) =>
+    target.every((v) => arr.includes(v));
+  //#endregion
 
   useEffect(() => {
     const SetProjects = async () => {
-      var tempProjects = await FetchProjects();
+      var tempProjects = await fetchProjects();
       setProjects(tempProjects);
     };
     SetProjects();
   }, []);
 
+  //#region Render logic
   let detailedViewJSX = <></>;
 
   let projectJsxElements = <></>;
   if (projects !== null && Array.isArray(projects)) {
     projectJsxElements = projects.map((project) => {
-        let projectTags = [];
-        for(let i = 0; i < project.tags.length; i ++) {
-            projectTags.push(project.tags[i].name);
-        }
-      if (ArrayContainsAllElementsOfTarget(projectTags, selectedTags)) {
+      let projectTags = [];
+      for (let i = 0; i < project.tags.length; i++) {
+        projectTags.push(project.tags[i].name);
+      }
+      if (arrayContainsAllElementsOfTarget(projectTags, selectedTags)) {
         return (
           <Project
             project={project}
-            click={() => OpenDetailedView(project)}
+            click={() => openDetailedView(project)}
             key={project._id}
             isAdmin={props.isAdmin}
             deleteProject={props.deleteProject}
           />
         );
       } else {
-         return <></>;
+        return <></>;
       }
     });
   }
@@ -85,11 +99,13 @@ const Projects = (props) => {
   if (detailedView && projectForDetailedView !== null) {
     detailedViewJSX = <DetailedProject project={projectForDetailedView} />;
   }
+  //#endregion
 
+  //#region  Rendering
   return (
     <>
-      <section id="Projects">
-        <div className="ProjectsContentContainer">
+      <section className={styles.Projects} id="Projects">
+        <div className={styles.ProjectsContentContainer}>
           <div>
             <h1>Projects</h1>
           </div>
@@ -100,8 +116,8 @@ const Projects = (props) => {
               projects={projects}
             />
           </div>
-          <div className="ProjectListing">
-            <Backdrop show={detailedView} clicked={HideDetailedViewHandler} />
+          <div className={styles.ProjectListing}>
+            <Backdrop show={detailedView} clicked={hideDetailedViewHandler} />
             {detailedViewJSX}
             {projectJsxElements}
           </div>
@@ -109,6 +125,7 @@ const Projects = (props) => {
       </section>
     </>
   );
+  //#endregion
 };
 
 export default Projects;

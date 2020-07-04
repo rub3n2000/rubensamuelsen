@@ -1,3 +1,5 @@
+@import '../../../Sass/GlobalFunctions.module.scss';
+
 .Project {
     min-width: 360px;
     max-width: 360px;
@@ -5,7 +7,7 @@
     width: 360px;
     position: relative;
     display: flex;
-    background-color: #252934;
+    background-color: f_color(primary);
     justify-content: center;
     text-align: center;
     cursor: pointer;

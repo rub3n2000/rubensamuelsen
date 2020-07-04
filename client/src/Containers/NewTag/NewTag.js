@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import classes from "./NewTag.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faKey } from "@fortawesome/free-solid-svg-icons";
-import myApi from "../../myApi";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 const NewTag = (props) => {
-  
   if (props.visible) {
     return (
       <div className={classes.NewTagDiv}>
@@ -28,11 +26,8 @@ const NewTag = (props) => {
         </div>
       </div>
     );
-  }
-  else {
-      return(
-          <></>
-      );
+  } else {
+    return <></>;
   }
 };
 

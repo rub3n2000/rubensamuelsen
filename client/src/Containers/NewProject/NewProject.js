@@ -1,98 +1,106 @@
-import React, { useState, useEffect } from "react";
-
-import classes from "./NewProject.module.scss";
-import './SelectStyling.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faKey } from "@fortawesome/free-solid-svg-icons";
-import Select from "react-select";
-import myApi from "../../myApi";
+//#region Imports
+  //#region Module dependencies
+  import React, { useState } from "react";
+  import Select from "react-select";
+  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  import { faAt } from "@fortawesome/free-solid-svg-icons";
+  //#endregion
+  //#region Styles
+  import classes from "./NewProject.module.scss";
+  import "./SelectStyling.scss";
+  //#endregion
+//#endregion
 
 const NewProject = (props) => {
-
-  const[newProject, setNewProject] = useState({
+  const [newProject, setNewProject] = useState({
     project: {
       name: "",
       websiteURL: "",
       sourceURL: "",
       subHeader: "",
       description: "",
-      screenshotURL: ""
+      screenshotURL: "",
     },
-    tags: []
+    tags: [],
   });
 
-  let filterdivContent;
-
-  let options = [];
-
+  //#region Event Handlers
   const onFilterChange = (e) => {
-    if(e !== null && e !== undefined) {
-    let tagArray = [];
-    for(let i = 0; i < e.length; i++) {
-      tagArray.push(e[i].value);
-    }
-    let tempProject = newProject;
-    tempProject.tags = tagArray;
-    setNewProject(tempProject);
-    props.projectChangeHandler(tempProject);
-    }
-    else {
+    if (e !== null && e !== undefined) {
+      let tagArray = [];
+      for (let i = 0; i < e.length; i++) {
+        tagArray.push(e[i].value);
+      }
+      let tempProject = newProject;
+      tempProject.tags = tagArray;
+      setNewProject(tempProject);
+      props.projectChangeHandler(tempProject);
+    } else {
       let tempProject = newProject;
       tempProject.tags = [];
       setNewProject(tempProject);
       props.projectChangeHandler(tempProject);
     }
-  }
+  };
 
   const onNameChange = (e) => {
     let tempProject = newProject;
     tempProject.project.name = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
 
   const onWebsiteURLChange = (e) => {
     let tempProject = newProject;
     tempProject.project.websiteURL = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
 
   const onSourceURLChange = (e) => {
     let tempProject = newProject;
     tempProject.project.sourceURL = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
 
   const onSubheaderChange = (e) => {
     let tempProject = newProject;
     tempProject.project.subHeader = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
 
   const onDescriptionChange = (e) => {
     let tempProject = newProject;
     tempProject.project.description = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
 
   const onScreenshotURLChange = (e) => {
     let tempProject = newProject;
     tempProject.project.screenshotURL = e.target.value;
     setNewProject(tempProject);
     props.projectChangeHandler(tempProject);
-  }
+  };
+  //#endregion
 
-  if(props.allTags) {
-    if(props.allTags.length != 0) {
-      for(let i = 0; i < props.allTags.length; i++) {
-      options.push({value: props.allTags[i].name, label: props.allTags[i].name});
+  //#region Render Logic
+  let filterdivContent;
+
+  let options = [];
+
+  if (props.allTags) {
+    if (props.allTags.length != 0) {
+      for (let i = 0; i < props.allTags.length; i++) {
+        options.push({
+          value: props.allTags[i].name,
+          label: props.allTags[i].name,
+        });
       }
     }
-   }
+  }
 
   filterdivContent = (
     <div className="FilterDivContent">
@@ -106,7 +114,9 @@ const NewProject = (props) => {
       />
     </div>
   );
-  
+  //#endregion
+
+  //#region Rendering
   if (props.visible) {
     return (
       <div className={classes.NewProjectDiv}>
@@ -177,12 +187,10 @@ const NewProject = (props) => {
         </div>
       </div>
     );
+  } else {
+    return <></>;
   }
-  else {
-      return(
-          <></>
-      );
-  }
+  //#endregion
 };
 
 export default NewProject;

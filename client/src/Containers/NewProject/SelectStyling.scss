@@ -21,7 +21,7 @@ $margin: 8px;
         padding: $margin / 2 $margin;
         box-shadow: 0 0 0 1px fade(black, 4%);
         color: white;
-        background-color: #252934;
+        background-color: f_color(primary);
 
         .rs2__control--is-focused {
             box-shadow: 0 0 0 1px #3878c7;

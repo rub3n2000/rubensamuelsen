@@ -1,4 +1,5 @@
 @import '../../../Sass/GlobalMixins.module.scss';
+@import '../../../Sass/GlobalFunctions.module.scss';
 
 .DetailedProject {
     min-width: 1080px;
@@ -6,7 +7,7 @@
     max-width: 1080px;
     position: relative;
     display: flex;
-    background-color: #cecece;
+    background-color: f_color(secondary);
     justify-content: center;
     text-align: center;
     z-index: 200;
@@ -44,7 +45,7 @@
         margin-left: 5%;
         margin-top: 2%;
         #Title {
-            color: #252934;
+            color: f_color(primary);
             text-align: start;
             padding: 0;
             margin:0;
@@ -66,14 +67,14 @@
         flex-wrap: wrap;
         margin-left: 5%;
         margin-top: 2%;
-        color: #252934;
+        color: f_color(primary);
         line-height: 2em;
 
         .AboutLabel {
             margin-bottom: 0;
             padding-bottom: 1%;
             border-bottom: 2px solid white;
-            color: #252934;
+            color: f_color(primary);
         }
 
         hr {
@@ -98,7 +99,7 @@
         min-width: 100%;
         div {
         padding: 1%;
-        background-color: #252934;
+        background-color: f_color(primary);
         margin: 5%;
         color: white;
         font-weight: 800;

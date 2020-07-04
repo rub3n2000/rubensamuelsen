@@ -2,15 +2,15 @@
 
 .App {
   min-height: 100vh;
-  background-color: #cecece;
+  background-color: f_color(secondary);
   overflow-x: hidden;
   width: 100%;
 }
 
 section {
-  background-color: #252934;
+  background-color: f_color(primary);
 }
 
 section:nth-of-type(even) {
-  background-color: #cecece;
+  background-color: f_color(secondary);
 }

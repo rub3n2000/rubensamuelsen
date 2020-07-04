@@ -1,7 +1,7 @@
 @import '../../Sass/GlobalFunctions.module.scss';
 @import '../../Sass/GlobalMixins.module.scss';
 
-#Contact {
+.Contact {
     color: #fff;
     align-items: center;
     display: flex;
@@ -11,18 +11,18 @@
     min-height: auto;
     width: 100%;
 
-    #TriangleTop {
+    .TriangleTop {
         margin-top: 2.5%;
         width: 98%;
         height: 50%;
         border-left: 25px solid transparent;
         border-right: 25px solid transparent;
-        border-top: 25px solid #252934;
+        border-top: 25px solid f_color(primary);
         cursor: pointer;
     }
     
 
-    #ContactContentContainer {
+    .ContactContentContainer {
         display: flex;
         width: 60%;
         justify-content: center;
@@ -39,7 +39,7 @@
         }
         min-height: 100%;
 
-        #ContactForm {
+        .ContactForm {
             width: 60%;
             margin: 0 auto;
             padding: 2%;
@@ -78,12 +78,12 @@
                     display: block;
                 }
 
-                #ButtonAndFeedbackContact {
+                .ButtonAndFeedbackContact {
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
 
-                    #ButtonContactDiv {
+                    .ButtonContactDiv {
                         background-color: #11344d;
                         color: #fff;
                         font-weight: 700;
@@ -103,7 +103,7 @@
                         }
                     }
 
-                    #ButtonContactDiv:hover {
+                    .ButtonContactDiv:hover {
                         transform: scale(1.2,1.2);
                         background-color: #000028;
                         box-shadow: -3px 2px #a8a8e6;
@@ -113,7 +113,7 @@
                         }
                     }
 
-                    #FeedbackDiv {
+                    .FeedbackDiv {
                         flex-basis: 90%;
                         display: flex;
                         align-items: center;
@@ -128,7 +128,7 @@
 }
 
 @include mobile {
-    #Contact {
+    .Contact {
         color: #fff;
         align-items: center;
         display: flex;
@@ -138,7 +138,7 @@
         min-height: auto;
         width: 100%;
     
-        #ContactContentContainer {
+        .ContactContentContainer {
             display: flex;
             width: 95%;
             justify-content: center;
@@ -154,7 +154,7 @@
             }
             min-height: 100%;
 
-            #ContactForm {
+            .ContactForm {
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -198,12 +198,12 @@
                         display: block;
                     }
     
-                    #ButtonAndFeedbackContact {
+                    .ButtonAndFeedbackContact {
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-end;
     
-                        #ButtonContactDiv {
+                        .ButtonContactDiv {
     
                             button {
                                 background-color: transparent;
@@ -214,7 +214,7 @@
                             }
                         }
     
-                        #FeedbackDiv {
+                        .FeedbackDiv {
                             flex-basis: 90%;
                             display: flex;
                             align-items: center;

@@ -1,7 +1,7 @@
 @import '../../Sass/GlobalFunctions.module.scss';
 @import '../../Sass/GlobalMixins.module.scss';
 
-#About {
+.About {
     color: rgb(63, 63, 63);
     padding: 0 10px;
     align-items: center;
@@ -11,7 +11,7 @@
     position: relative;
     min-height: 120vh;
 
-    #AboutContentContainer {
+    .AboutContentContainer {
         display: flex;
         width: 60%;
         justify-content: center;
@@ -20,7 +20,7 @@
         {
             margin-top: 10%;
         }
-        #AboutContent {
+        .AboutContent {
             text-align: center;
             h1 {
                 font-size: 2.5em;
@@ -36,7 +36,7 @@
             flex-direction: column;
             align-content: center;
             align-items: center;
-            #AboutText {
+            .AboutText {
                 width: 60%;
 
                 span {
@@ -44,17 +44,17 @@
                 }
 
                 .Colorized {
-                    color: #f700ff;
+                    color: f_color(third);
                 }
 
                 .ColorizedAlt {
-                    color: #ffa600;
+                    color: f_color(fourth);
                 }
             }
         }
     }
 
-    #SkillSeksjon {
+    .SkillSeksjon {
         margin: 0 auto;
         display: flex;
         position: relative;
@@ -157,7 +157,7 @@
 }
 
 @include mobile {
-    #About {
+    .About {
         color: rgb(63, 63, 63);
         padding: 0 10px;
         align-items: center;
@@ -167,7 +167,7 @@
         position: relative;
         min-height: 150vh;
     
-        #AboutContentContainer {
+        .AboutContentContainer {
             display: flex;
             width: 100%;
             justify-content: center;
@@ -176,7 +176,7 @@
                 margin-top: 20%;
             }
     
-            #AboutContent {
+            .AboutContent {
                 text-align: center;
                 h1 {
                     font-size: 2.5em;
@@ -192,7 +192,7 @@
                 flex-direction: column;
                 align-content: center;
                 align-items: center;
-                #AboutText {
+                .AboutText {
                     width: 90%;
                     display: flex;
                     flex-direction: column;
@@ -200,7 +200,7 @@
             }
         }
 
-        #SkillSeksjon {
+        .SkillSeksjon {
             margin: 0 auto;
             display: flex;
             position: relative;

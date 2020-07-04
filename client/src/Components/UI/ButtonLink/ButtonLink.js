@@ -9,7 +9,9 @@ const ButtonLink = (props) => {
       onClick={() => {
         window.open(props.link, "_blank");
       }}
-    >{props.children}</div>
+    >
+      {props.children}
+    </div>
   );
   return null;
 };
