@@ -29,8 +29,8 @@ const DetailedProject = (props) => {
         </div>
         <div className={styles.Image}>
           <img
-            src={props.project.screenshotURL}
-            srcSet="https://i.ibb.co/LJzFYpQ/Untitled.png"
+            srcSet={props.project.screenshotURL}
+            src="https://i.ibb.co/LJzFYpQ/Untitled.png"
             alt={props.project.name}
           ></img>
         </div>
