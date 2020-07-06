@@ -23,7 +23,7 @@ mongoose.connect(
 //#endregion
 
 //#region  App setup statements
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
+//app.use(enforce.HTTPS({ trustProtoHeader: true }))
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.use(
   require("express-session")({
