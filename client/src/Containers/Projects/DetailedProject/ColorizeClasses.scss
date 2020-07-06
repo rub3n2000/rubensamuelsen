@@ -1,0 +1,10 @@
+@import '../../../Sass/GlobalFunctions.module.scss';
+@import '../../../Sass/GlobalMixins.module.scss';
+
+.Colorized {
+    color: f_color(third);
+}
+
+.ColorizedAlt {
+    color: f_color(fourth);
+}

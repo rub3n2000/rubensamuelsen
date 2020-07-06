@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./DetailedProject.module.scss";
+import './ColorizeClasses.scss';
 import ButtonLink from "../../../Components/UI/ButtonLink/ButtonLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkAlt";
