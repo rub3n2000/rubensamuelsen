@@ -34,9 +34,11 @@ const DetailedProject = (props) => {
           ></img>
         </div>
         <div className={styles.About}>
+          <div>
           <h2 className={styles.AboutLabel}>About</h2>
           <hr></hr>
-          <p>{props.project.description}</p>
+          </div>
+          <div className={styles.Description} dangerouslySetInnerHTML={{__html: props.project.description}}></div>
         </div>
         <div className={styles.TagContainer}>{tags}</div>
       </div>

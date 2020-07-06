@@ -17,6 +17,15 @@
     box-shadow: 4px 4px #585858;
     padding: 1%;
 
+    .Description {
+        img {
+            overflow: hidden;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+    }
+
     .Container {
         min-width: 90%;
         max-width: 90%;
