@@ -11,26 +11,38 @@ const LocalStrategy = require("passport-local").Strategy;
 const userRoutes = require("./User/Routes");
 const projectRoutes = require("./Project/Routes");
 const tagRoutes = require("./Tag/Routes");
-const secrets = require("./secrets");
 
 const app = express();
-mongoose.connect(
-  "mongodb+srv://rub3n2000:" +
-    secrets.mongoPassword +
-    "@rubensamuelsen-rjp7z.mongodb.net/rubensamuelsen?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
-);
 //#endregion
 
 //#region  App setup statements
-app.use(enforce.HTTPS({ trustProtoHeader: true }))
+if (process.env.DB_CONN_STRING) {
+	mongoose.connect(process.env.DB_CONN_STRING, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	});
+} else {
+	mongoose.connect("mongodb://localhost:27017/rubensamuelsen", {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		useCreateIndex: true,
+	});
+}
+
+if (process.env.DB_CONN_STRING) {
+	app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+
 app.use(express.static(path.join(__dirname, "/client/build")));
 app.use(
-  require("express-session")({
-    secret: secrets.authKey,
-    resave: false,
-    saveUninitialized: false,
-  })
+	require("express-session")({
+		secret:
+			process.env.AUTHSECRET ||
+			"daiuda%!#!#AD-_!¤1eadaeawi951402ADAD5t134_DAdddad532AADsadgHT352_SDA",
+		resave: false,
+		saveUninitialized: false,
+	})
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -48,7 +60,9 @@ app.use("/api/tag", tagRoutes);
 
 //#region Client Rendering Route
 app.get("*", (req, res) => {
-  res.sendFile("./index.html", { root: path.join(__dirname, "/client/build") });
+	res.sendFile("./index.html", {
+		root: path.join(__dirname, "/client/build"),
+	});
 });
 //#endregion
 

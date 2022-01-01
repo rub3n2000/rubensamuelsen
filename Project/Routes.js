@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const jwt = require("jsonwebtoken");
-const secrets = require("../secrets");
 const isAdmin = require("../middleware").isAdmin;
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;

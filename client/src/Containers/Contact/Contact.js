@@ -9,12 +9,12 @@ const Contact = () => {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-    let response = await axios.post("https://formspree.io/maypbljv", data);
+    let response = await axios.post("https://formspree.io/f/myyozpjy", data);
     if (response.status === 200) {
       setSubFeedback("Success! I will respond as soon as possible.");
     } else {
       setSubFeedback(
-        "Something went wrong.. Try sending me an email directly at ruben@tresam.no"
+        "Something went wrong.. Try sending me an email directly at mail@rubensamuelsen.com"
       );
     }
   };

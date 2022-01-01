@@ -39,7 +39,7 @@ const FollowMe = () => {
           <a
             className={styles.email}
             target="_blank"
-            href="mailto:ruben@tresam.no"
+            href="mailto:mail@rubensamuelsen.com"
             title="Send me an Email"
           >
             <span>Send me an Email</span>
