@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./DetailedProject.module.scss";
+import './ColorizeClasses.scss';
 import ButtonLink from "../../../Components/UI/ButtonLink/ButtonLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkAlt";
@@ -28,15 +29,17 @@ const DetailedProject = (props) => {
         </div>
         <div className={styles.Image}>
           <img
-            src={props.project.screenshotURL}
-            srcSet="https://i.ibb.co/LJzFYpQ/Untitled.png"
+            srcSet={props.project.screenshotURL}
+            src="https://i.ibb.co/LJzFYpQ/Untitled.png"
             alt={props.project.name}
           ></img>
         </div>
         <div className={styles.About}>
+          <div>
           <h2 className={styles.AboutLabel}>About</h2>
           <hr></hr>
-          <p>{props.project.description}</p>
+          </div>
+          <div className={styles.Description} dangerouslySetInnerHTML={{__html: props.project.description}}></div>
         </div>
         <div className={styles.TagContainer}>{tags}</div>
       </div>

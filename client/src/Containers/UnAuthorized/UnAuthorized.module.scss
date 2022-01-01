@@ -1,3 +1,6 @@
+@import '../../Sass/GlobalFunctions.module.scss';
+@import '../../Sass/GlobalMixins.module.scss';
+
 .UnAuthorized {
     margin: 0 auto;
     text-align: center;
@@ -48,7 +51,7 @@
     }
 }
 
-@media (max-width: 1000px) { 
+@include mobile { 
     .UnAuthorized {
         margin: 0 auto;
         text-align: center;
